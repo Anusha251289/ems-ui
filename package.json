@@ -17,8 +17,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "API=LOCAL react-scripts start",
-    "build": "API=PROD react-scripts build",
+    "start": "REACT_APP_ENV=LOCAL react-scripts start",
+    "build": "REACT_APP_ENV=PROD react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
