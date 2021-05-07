@@ -60,8 +60,8 @@ class CreateEmployeeComponent extends Component {
         let errors = {}
         if (!values.employeeId) {
             errors.employeeId = 'Employee Id cannot be empty'
-        } else if (values.employeeId && (values.employeeId.toString().length < 5 || values.employeeId.toString().length > 8)) {
-            errors.employeeId = 'Minimum length of Employee Id is 5 and Maximum length is 8'
+        } else if (values.employeeId && (values.employeeId.toString().length < 4 || values.employeeId.toString().length > 8)) {
+            errors.employeeId = 'Minimum length of Employee Id is 4 and Maximum length is 8'
         }
 
         else if (!values.employeeName) {
