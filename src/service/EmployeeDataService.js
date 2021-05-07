@@ -2,11 +2,19 @@ import axios from 'axios'
 
 class EmployeeDataService {
 
+
     getEmployees() {
-        if (process.env.REACT_APP_ENV === "LOCAL")
+        console.log("process", process.env)
+
+        if (process.env.REACT_APP_ENV === "LOCAL") {
+            console.log("Calling local")
             return axios.get('http://localhost:8080/api/employees');
-        else if (process.env.REACT_APP_ENV === "PROD")
+        }
+        else if (process.env.REACT_APP_ENV === "PROD") {
+            console.log("Calling prod")
             return axios.get('https://emp-management-api.herokuapp.com/api/employees');
+        }
+            
     }
 
     deleteEmployee(id) {
