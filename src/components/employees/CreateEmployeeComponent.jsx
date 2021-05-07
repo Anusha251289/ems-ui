@@ -31,11 +31,13 @@ class CreateEmployeeComponent extends Component {
 
     clearEmployee = () => {
         this.setState({
-            employeeId: '',
-            employeeName: '',
-            age: '',
-            phone: '',
-            emailId: ''
+            employee: {
+                employeeId: '',
+                employeeName: '',
+                age: '',
+                phone: '',
+                emailId: ''
+            }
         })
     }
     onSubmit = (values) => {
@@ -58,22 +60,30 @@ class CreateEmployeeComponent extends Component {
         let errors = {}
         if (!values.employeeId) {
             errors.employeeId = 'Employee Id cannot be empty'
-        } else if (values.employeeId.length < 5 || values.employeeId.length > 8) {
+        } else if (values.employeeId && (values.employeeId.toString().length < 5 || values.employeeId.toString().length > 8)) {
             errors.employeeId = 'Minimum length of Employee Id is 5 and Maximum length is 8'
         }
 
-        if (!values.employeeName) {
+        else if (!values.employeeName) {
             errors.employeeName = 'Employee Name cannot be empty'
         }
 
-        if (!values.age) {
+        else if (!values.age) {
             errors.age = 'Employee Age cannot be empty'
-        } else if (values.age.length === 2) {
-            errors.age = 'Enter a valid Age'
+        } else if (values.age < 18 || values.age > 60) {
+            errors.employeeId = 'Employee Age should be greater than 18 and lesser than 60'
         }
 
-        if (values.phone.length > 10) {
+        else if (!values.phone) {
+            errors.age = 'Employee Phone cannot be empty'
+        }
+        else if (values.phone && values.phone.length !== 10) {
             errors.phone = 'Enter a valid 10 digit Phone number'
+        } else if (isNaN(values.phone)) {
+            errors.phone = 'Enter only numeric values for Phone Number'
+        }
+        else if (!values.emailId){
+            errors.emailId = 'Email Id cannot be empty'
         }
         return errors
     }
