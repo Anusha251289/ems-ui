@@ -17,7 +17,7 @@ class EmployeeComponent extends Component {
                         <Route path="/view" component={ViewEmployeeDetailsComponent} />
                         <Route path="" component={ErrorComponent} />
                     </Switch>
-                    <FooterComponent></FooterComponent>
+                    {/*<FooterComponent></FooterComponent>*/}
                 </Router>
             </div>
         )

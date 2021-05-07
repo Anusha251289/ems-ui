@@ -100,23 +100,23 @@ class CreateEmployeeComponent extends Component {
                                         <ErrorMessage name="phone" component="div" className="alert alert-warning" />
                                         <ErrorMessage name="emailId" component="div" className="alert alert-warning" />
                                         <fieldset className="form-group">
-                                            <label className="header-label">Employee ID</label>
-                                            <Field className="form-control" type="text" name="employeeId"></Field>
+                                            <label className="header-label required">Employee ID</label>
+                                            <Field className="form-control" type="number" name="employeeId"></Field>
                                         </fieldset>
                                         <fieldset className="form-group">
-                                            <label className="header-label">Employee Name</label>
+                                            <label className="header-label required">Employee Name</label>
                                             <Field className="form-control" type="text" name="employeeName"></Field>
                                         </fieldset>
                                         <fieldset className="form-group">
-                                            <label className="header-label">Age</label>
+                                            <label className="header-label required">Age</label>
                                             <Field className="form-control" type="number" name="age"></Field>
                                         </fieldset>
                                         <fieldset className="form-group">
-                                            <label className="header-label">Phone</label>
+                                            <label className="header-label required">Phone</label>
                                             <Field className="form-control" type="text" name="phone"></Field>
                                         </fieldset>
                                         <fieldset className="form-group">
-                                            <label className="header-label">Email Id</label>
+                                            <label className="header-label required">Email Id</label>
                                             <Field className="form-control" type="text" name="emailId"></Field>
                                         </fieldset>
                                         <button className="btn-btn-success" type="submit">Save</button>
